@@ -10,7 +10,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "tsc && nexe build/index.js -o build/bin/melt",
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "release": "standard-version"
   },
   "dependencies": {
     "colors": "^1.4.0",
