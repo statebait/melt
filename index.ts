@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { rm } from "shelljs";
 import program from "commander";
 import colors from "colors";
@@ -21,7 +22,7 @@ program.version(
 // CLI Options
 program.option(
   "-r, --recursive",
-  "recursively delete a folder and its content"
+  "recursively delete a folder and its contents"
 );
 
 // Parses the passed arguments and stores them in program.args (regular arguments passed) and program.opts() (options passed)

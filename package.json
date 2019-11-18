@@ -8,10 +8,14 @@
     "url": "https://statebait.github.io"
   },
   "license": "UNLICENSED",
+  "bin": {
+    "melt": "./build/index.js"
+  },
   "scripts": {
     "build": "tsc && nexe build/index.js -o build/bin/melt",
     "start": "ts-node index.ts",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "colors": "^1.4.0",
