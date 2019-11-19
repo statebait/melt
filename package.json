@@ -1,13 +1,18 @@
 {
   "name": "@statebait/melt",
   "version": "0.0.1-alpha.1",
-  "private": true,
   "main": "index.js",
-  "author": {
-    "name": "Mohamed Shadab",
-    "url": "https://statebait.github.io"
+  "author": "Mohamed Shadab (https://statebait.github.io)",
+  "license": "GPL-3.0-or-later",
+  "description": "Melt your files and folders on Windows!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statebait/melt.git"
   },
-  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/statebait/melt/issues"
+  },
+  "homepage": "https://github.com/statebait/melt#readme",
   "bin": {
     "melt": "./build/index.js"
   },
@@ -18,15 +23,14 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "colors": "^1.4.0",
     "commander": "^4.0.1",
     "inquirer": "^7.0.0",
-    "shelljs": "^0.8.3"
+    "rimraf": "^3.0.0"
   },
   "devDependencies": {
     "@types/inquirer": "^6.5.0",
     "@types/node": "^12.12.8",
-    "@types/shelljs": "^0.8.6",
+    "@types/rimraf": "^2.0.3",
     "nexe": "^3.3.2",
     "standard-version": "^7.0.0",
     "ts-node": "^8.5.2",

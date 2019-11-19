@@ -1,16 +1,15 @@
 #!/usr/bin/env node
-import { rm } from "shelljs";
 import program from "commander";
-import colors from "colors";
 import inquirer from "inquirer";
+import rimraf from "rimraf";
+import fs from "fs";
 
 // Types
 type AnswersType = { consent: String };
 
 // Message if no path is passed
-const NO_PATH = colors.red(
-  "Please pass the path of the folder/file you want to delete as an argument."
-);
+const NO_PATH_MESSAGE =
+  "Please pass the path of the folder/file you want to delete as an argument.";
 
 // CLI version
 program.version(
@@ -25,14 +24,19 @@ program.option(
   "recursively delete a folder and its contents"
 );
 
-// Parses the passed arguments and stores them in program.args (regular arguments passed) and program.opts() (options passed)
+/*
+Parses the passed arguments and stores them in program.args (regular arguments passed) and program.opts() (options passed)
+*/
 program.parse(process.argv);
+
+// Path constant
 
 // Main function
 (function() {
+  const PATH = program.args[0];
   // Checks if path argument is passed or not
   if (program.args.length === 0) {
-    return console.log(NO_PATH);
+    return console.log(NO_PATH_MESSAGE);
   }
 
   if (program.recursive) {
@@ -46,10 +50,18 @@ program.parse(process.argv);
       ])
       .then((answers: AnswersType) => {
         if (answers.consent[0].toLowerCase() === "y") {
-          return rm("-rf", program.args[0]);
+          return rimraf.sync(PATH);
         } else if (answers.consent[0].toLowerCase() === "n") {
           return console.log("Folder not deleted.");
         }
       });
-  } else return rm(program.args[0]);
+  } else
+    return fs.unlink(PATH, error => {
+      if (error) {
+        return console.log(
+          "Something went wrong. Please use -r if deleting a folder."
+        );
+      }
+      return;
+    });
 })();
