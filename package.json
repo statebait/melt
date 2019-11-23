@@ -1,6 +1,6 @@
 {
   "name": "@statebait/melt",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "Mohamed Shadab (https://statebait.github.io)",
   "license": "GPL-3.0-or-later",
