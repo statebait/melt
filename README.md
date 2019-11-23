@@ -2,7 +2,9 @@
 
 Melt your files and folders on Windows!
 
-A utility tool which provides `rm` like functionality for Windows machines.
+A configurable utility tool which provides `rm` like functionality for Windows machines.
+
+![melt-demo.gif](https://i.imgur.com/ppsHbjI.gif)
 
 ## Getting Started
 
@@ -48,10 +50,28 @@ For deleting folders (and folders with contents):
 melt <folder_name> -r
 ```
 
+#### Configure
+
+You can configure melt to disable/enable the warning prompt while using the recursive option.
+
+To turn off the warning prompt:
+
+```bash
+melt -p off
+```
+
+To turn on the warning prompt:
+
+```bash
+melt -p on
+```
+
 ### All flags
 
-- Display the current version of melt; `-v` or `--version`
+- Display the current version of melt: `-v` or `--version`
 
-- Display help; `-h` or `--help`
+- Display help: `-h` or `--help`
 
-- Recursive delete (for folders); `-r` or `--recursive`
+- Configure warning prompt: `-p` or `--prompt`
+
+- Recursive delete (for folders): `-r` or `--recursive`
