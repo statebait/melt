@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import program from "commander";
 import inquirer from "inquirer";
-import rimraf from "rimraf";
+import shell from "shelljs";
 import fs from "fs";
 
 // Types
@@ -21,7 +21,7 @@ program.version(
 // CLI Options
 program
   .option("-r, --recursive", "recursively delete a folder and its contents")
-  .option("-p, --prompt", "Set 'Are you sure' prompt to on or off.");
+  .option("-p, --prompt", "Set 'Are you sure' prompt to on or off");
 
 /*
 Parses the passed arguments and stores them in program.args (regular arguments passed) and program.opts() (options passed)
@@ -72,22 +72,15 @@ program.parse(process.argv);
         ])
         .then((answers: AnswersType) => {
           if (answers.consent[0].toLowerCase() === "y") {
-            return rimraf.sync(MAIN_ARG);
+            return shell.rm("-rf", MAIN_ARG);
           } else if (answers.consent[0].toLowerCase() === "n") {
             return console.log("Folder not deleted.");
           }
         });
     } else {
-      return rimraf.sync(MAIN_ARG);
+      return shell.rm("-rf", MAIN_ARG);
     }
   } else {
-    return fs.unlink(MAIN_ARG, error => {
-      if (error) {
-        return console.log(
-          "Something went wrong. Please use -r if deleting a folder."
-        );
-      }
-      return;
-    });
+    return shell.rm(MAIN_ARG);
   }
 })();
