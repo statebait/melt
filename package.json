@@ -23,7 +23,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "commander": "^4.0.1",
+    "commander": "^5.1.0",
     "inquirer": "^7.0.0",
     "shelljs": "^0.8.3"
   },

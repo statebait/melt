@@ -29,7 +29,7 @@ Parses the passed arguments and stores them in program.args (regular arguments p
 program.parse(process.argv);
 
 // Main function
-(function() {
+(function () {
   // Path constant
   const MAIN_ARG: string = program.args[0];
   // Path to the config file; .meltrc.json
@@ -67,8 +67,8 @@ program.parse(process.argv);
           {
             name: "consent",
             message:
-              "This will delete the folder and all its contents. Are you sure you want to proceed(Y/n)?\n"
-          }
+              "This will delete the folder and all its contents. Are you sure you want to proceed(Y/n)?\n",
+          },
         ])
         .then((answers: AnswersType) => {
           if (answers.consent[0].toLowerCase() === "y") {
