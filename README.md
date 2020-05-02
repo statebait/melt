@@ -1,5 +1,8 @@
 # Melt 🔥
 
+[![npm version](https://badge.fury.io/js/%40statebait%2Fmelt.svg)](https://badge.fury.io/js/%40statebait%2Fmelt)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+
 Melt your files and folders on Windows!
 
 A configurable utility tool which provides `rm` like functionality for Windows machines.
@@ -12,19 +15,11 @@ A configurable utility tool which provides `rm` like functionality for Windows m
 
 There are currently 2 ways to install `melt`;
 
-1. With npm/yarn (you need to have [NodeJS](https://nodejs.org) installed on your machine):
+1. With npm (you need to have [NodeJS](https://nodejs.org) installed on your machine):
 
-   - With npm:
-
-   ```bash
-   npm install -g @statebait/melt
-   ```
-
-   - With yarn (you also need [Yarn](https://yarnpkg.com/) installed on your machine):
-
-   ```bash
-   yarn global add @statebait/melt
-   ```
+```bash
+npm install -g @statebait/melt
+```
 
 2. Using the `.exe` and adding it to the path:
 
@@ -75,3 +70,7 @@ melt -p on
 - Configure warning prompt: `-p` or `--prompt`
 
 - Recursive delete (for folders): `-r` or `--recursive`
+
+## License
+
+This project is licensed under the GPL-3.0 License - Copyright (c) 2020 Mohamed Shadab
