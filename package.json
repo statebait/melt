@@ -23,12 +23,12 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "commander": "^5.1.0",
+    "commander": "^6.0.0",
     "inquirer": "^7.0.0",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
-    "@types/inquirer": "^6.5.0",
+    "@types/inquirer": "^7.3.0",
     "@types/node": "^12.12.8",
     "@types/shelljs": "^0.8.6",
     "nexe": "^3.3.2",
