@@ -8,7 +8,7 @@ import fs from "fs";
 type AnswersType = { consent: string };
 
 // Message if no path is passed
-const NO_PATH_MESSAGE =
+const NO_PATH_MESSAGE: string =
   "Please pass the path of the folder/file you want to delete as an argument.";
 
 // CLI version
